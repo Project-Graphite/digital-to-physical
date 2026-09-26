@@ -124,11 +124,9 @@ body {
 }
 
 .brand-glyph {
-  width: 16px;
-  height: 14px;
-  transform: skewX(-12deg);
-  border-radius: 2px;
-  background-color: var(--text-primary);
+  width: 14px;
+  height: 18px;
+  color: var(--text-primary);
 }
 
 .brand-name {

@@ -320,7 +320,18 @@ export function App() {
       <header className="top-bar">
         <a href="/" className="brand">
           <span className="brand-mark" aria-hidden="true">
-            <span className="brand-glyph" />
+            <svg
+              className="brand-glyph"
+              viewBox="-3 -3 36 46"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={6}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5.62 25 L0 40 M24.38 25 L30 40" />
+              <path d="M15 0 L8.25 18 H21.75 Z" fill="currentColor" />
+            </svg>
           </span>
           <span className="brand-name">
             Graphite <span className="sub-label">Digital to Physical</span>
