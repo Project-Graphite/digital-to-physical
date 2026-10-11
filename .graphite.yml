@@ -10,6 +10,7 @@ projects:
     authors: [BluoCaroot]
     status: live
     listed: true
+    pinned: true
     deploy:
       kind: pages
       host: digital-to-physical.project-graphite.com
