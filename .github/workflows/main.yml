@@ -1,0 +1,17 @@
+name: Main
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy
+    uses: project-graphite/actions/.github/workflows/reusable-deploy.yml@main
+    with:
+      services: '["site"]'
+    secrets: inherit
