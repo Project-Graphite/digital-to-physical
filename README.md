@@ -51,7 +51,7 @@ This tool resolves these issues interactively directly in your browser.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 18 or newer)
+- [Node.js](https://nodejs.org/) 20.19 or newer, or 22.12 or newer (required by Vite 8)
 - `npm` (installed with Node.js)
 
 ### Installation & Development Server
@@ -73,7 +73,7 @@ Open `http://localhost:5173` in your web browser.
 
 ## Usage
 
-1. **Drop your comic archive:** Drag and drop any `.cbz` or `.cbr` file onto the dropzone.
+1. **Drop your comic archive:** Drag and drop any `.cbz`, `.cbr`, `.zip` or `.rar` file onto the dropzone.
 2. **Review the Live Audit:** Check the top audit banner to confirm that your page count is a multiple of four and that all split spreads face each other properly.
 3. **Adjust Settings:**
    - **Presets:** Quick options for *Print & bind* (saddle-stitch booklet), *Faithful copy* (preserve source exactly), or *Two-up on screen* (facing reader).
@@ -85,22 +85,13 @@ Open `http://localhost:5173` in your web browser.
 
 ---
 
-## Production Build & Static Deployment
+## Production
 
-You can build the production-ready static assets:
+Production runs at https://digital-to-physical.project-graphite.com.
 
-```bash
-cd web-app
-npm run build
-```
+Every push to `main` records the commit in `platform` (`tags/digital-to-physical.json`). The platform **Deploy** workflow then builds `web-app` with `npm run build` on Node 24 and uploads `web-app/dist` to the `digital-to-physical` Cloudflare Pages project. The Pages project is not connected to Git; it only receives these uploads.
 
-The compiled bundle is output to `web-app/dist/`. Because the application is entirely static and requires no server runtime, you can deploy this directory to any static web host:
-
-- **Cloudflare Pages**
-- **Vercel**
-- **Netlify**
-- **GitHub Pages**
-- **Amazon S3 / Any Static Web Server**
+To pin a commit, set `tag:` in `platform/deploy/digital-to-physical/values.yaml`.
 
 ---
 
